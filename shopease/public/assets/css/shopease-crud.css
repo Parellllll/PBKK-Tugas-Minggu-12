@@ -1,0 +1,186 @@
+:root {
+    --se-primary: #6d28d9;
+    --se-primary-hover: #5b21b6;
+    --se-primary-soft: #ede9fe;
+    --se-bg: #f8fafc;
+    --se-surface: #ffffff;
+    --se-surface-alt: #f1f5f9;
+    --se-border: #e2e8f0;
+    --se-text: #0f172a;
+    --se-muted: #64748b;
+    --se-sidebar: #0f172a;
+}
+
+[data-theme="dark"] {
+    --se-primary: #8b5cf6;
+    --se-primary-hover: #7c3aed;
+    --se-primary-soft: rgba(139, 92, 246, 0.2);
+    --se-bg: #0b1120;
+    --se-surface: #111827;
+    --se-surface-alt: #1e293b;
+    --se-border: #1f2937;
+    --se-text: #f1f5f9;
+    --se-muted: #94a3b8;
+    --se-sidebar: #020617;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--se-bg);
+    color: var(--se-text);
+    min-height: 100vh;
+}
+
+.se-surface {
+    background-color: var(--se-surface);
+    border: 1px solid var(--se-border);
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.se-navbar {
+    background-color: var(--se-surface);
+    border-bottom: 1px solid var(--se-border);
+}
+
+.se-brand-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-se {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.btn-se:hover {
+    background: linear-gradient(135deg, #6d28d9, #5b21b6);
+    color: #fff;
+}
+
+.se-hero {
+    background: linear-gradient(135deg, #2e1065 0%, #6d28d9 55%, #4f46e5 100%);
+    color: #fff;
+    border-radius: 22px;
+}
+
+.product-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+    background: var(--se-surface-alt);
+}
+
+.table-thumb {
+    width: 58px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--se-border);
+}
+
+.gallery-thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.gallery-thumb.is-primary {
+    border-color: var(--se-primary);
+}
+
+/* Workspace Layout */
+.ws-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 256px 1fr;
+}
+.ws-sidebar {
+    background: var(--se-sidebar);
+    color: #cbd5e1;
+    padding: 22px 16px;
+    display: flex;
+    flex-direction: column;
+}
+.ws-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 13px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.ws-nav a:hover { background: rgba(255,255,255,.08); color: #fff; }
+.ws-nav a.active { background: #6d28d9; color: #fff; font-weight: 600; }
+
+.ws-main {
+    padding: 24px 30px;
+    min-width: 0;
+}
+
+[data-theme="dark"] .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #e2e8f0;
+    --bs-table-border-color: #1f2937;
+}
+[data-theme="dark"] .table-light {
+    --bs-table-bg: #1e293b;
+    --bs-table-color: #f8fafc;
+}
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f1f5f9;
+}
+[data-theme="dark"] .text-dark { color: #f8fafc !important; }
+[data-theme="dark"] .text-muted { color: #94a3b8 !important; }
+[data-theme="dark"] .bg-light { background-color: #1e293b !important; }
+[data-theme="dark"] .nav-link { color: #e2e8f0 !important; }
+
+.pagination {
+    gap: 6px;
+    margin-bottom: 0;
+}
+.pagination li a, .pagination li span {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--se-border);
+    background: var(--se-surface);
+    color: var(--se-text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+.pagination li.active a, .pagination li.active span {
+    background: var(--se-primary);
+    border-color: var(--se-primary);
+    color: #fff;
+}
+
+@media (max-width: 960px) {
+    .ws-shell { grid-template-columns: 1fr; }
+    .ws-sidebar { padding: 14px 16px; }
+    .ws-nav { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ws-nav a { margin-bottom: 0; padding: 7px 11px; font-size: 13px; }
+    .ws-main { padding: 16px; }
+}
+

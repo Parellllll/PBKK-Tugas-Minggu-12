@@ -1,0 +1,20 @@
+# Dependencies
+shopease/vendor/
+node_modules/
+
+# Environment & local SQLite runtime
+shopease/.env
+shopease/writable/*.db
+shopease/writable/*.db-*
+shopease/writable/cache/*
+!shopease/writable/cache/index.html
+shopease/writable/logs/*
+!shopease/writable/logs/index.html
+shopease/writable/session/*
+!shopease/writable/session/index.html
+shopease/writable/debugbar/*
+!shopease/writable/debugbar/index.html
+
+# OS
+.DS_Store
+Thumbs.db
